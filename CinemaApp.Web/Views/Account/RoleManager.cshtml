@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CinemaApp.Domain.Identity.CinemaAppUser>
+@{
+    ViewData["Title"] = "RoleManager";
+}
+
+@using (Html.BeginForm("ImportUsers", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" required />
+    <input type="submit" value="Import Users" />
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    <form asp-action="ChangeRole" asp-controller="Account" method="post">
+                        <input type="hidden" value="@item.Id" name="id" />
+                        <input type="submit" value="Change the role" />
+                        @Html.AntiForgeryToken()
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

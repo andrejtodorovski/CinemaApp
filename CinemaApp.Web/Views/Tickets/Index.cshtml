@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CinemaApp.Domain.DTO.TicketDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (User.IsInRole("Admin"))
+{
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+    <form asp-action="exportToExcel">
+        <div class="form-group">
+            <label for="Genre">Enter Genre</label>
+            <input type="text" id="Genre" name="Genre" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Export to Excel</button>
+    </form>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOfProjection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfProjection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            }
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

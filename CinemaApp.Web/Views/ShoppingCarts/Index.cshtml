@@ -1,0 +1,82 @@
+﻿@using CinemaApp.Domain.DTO;
+@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> StripeSettings
+@model CinemaApp.Domain.DTO.ShoppingCartDTO
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Shopping Cart for @Model.OwnerName</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    MovieName
+                </th>
+                <th>
+                    TimeOfProjection
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    UserName
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Tickets)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeOfProjection)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="@item.Id" name="Id"/>
+                            <input type="submit" value="Remove from cart" class="btn btn-danger" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <h3>Total Price: @Model.TotalPrice</h3>
+         <form asp-action="Order">
+            <input type="hidden" asp-for="@Model.Id" name="Id"/>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="@StripeSettings.Value.PublishableKey"
+                    data-amount="@(Model.TotalPrice*100)"
+                    data-name="IS"
+                    data-description=""
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="en"
+                    data-zip-code="true"
+                    data-label="Pay @Model.TotalPrice MKD">
+            </script>
+        </form>
+    </div>
+</div>

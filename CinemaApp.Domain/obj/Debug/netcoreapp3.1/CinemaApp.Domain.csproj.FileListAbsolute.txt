@@ -1,0 +1,10 @@
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\bin\Debug\netcoreapp3.1\CinemaApp.Domain.deps.json
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\bin\Debug\netcoreapp3.1\CinemaApp.Domain.dll
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\bin\Debug\netcoreapp3.1\CinemaApp.Domain.pdb
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.AssemblyInfo.cs
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.dll
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Domain\obj\Debug\netcoreapp3.1\CinemaApp.Domain.pdb

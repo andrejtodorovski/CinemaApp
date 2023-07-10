@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CinemaApp.Domain.DTO.ProjectionDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+    <a asp-action="Create">Create New</a>
+    </p>
+}
+<form asp-action="Index">
+    <div class="form-group">
+        <label for="date">Select Date</label>
+        <input type="date" id="date" name="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOfProjection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketsAvailable)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfProjection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketsAvailable)
+            </td>
+            <td>
+                <form asp-action="AddProjectionToCard" asp-controller="Projections" method="post">
+                <input type="hidden" asp-for="@item.Id" name="ProjectionId" />
+                    <div class="form-group d-flex">
+                        <input type="number" class="form-control w-50" id="Quantity" name="Quantity" min="1" />
+                        <button type="submit" class="btn btn-primary w-50">Add to Cart</button>
+                    </div>
+                </form>
+            </td>
+            <td>
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            }                
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

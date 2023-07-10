@@ -1,0 +1,13 @@
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\bin\Debug\netcoreapp3.1\CinemaApp.Repository.deps.json
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\bin\Debug\netcoreapp3.1\CinemaApp.Repository.dll
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\bin\Debug\netcoreapp3.1\CinemaApp.Repository.pdb
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\bin\Debug\netcoreapp3.1\CinemaApp.Domain.dll
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\bin\Debug\netcoreapp3.1\CinemaApp.Domain.pdb
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.AssemblyInfo.cs
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.csproj.CopyComplete
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.dll
+C:\Users\andre\source\repos\CinemaApp\CinemaApp.Repository\obj\Debug\netcoreapp3.1\CinemaApp.Repository.pdb

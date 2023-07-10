@@ -1,0 +1,56 @@
+﻿@model CinemaApp.Domain.DomainModels.Movie
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MovieTitle" class="control-label"></label>
+                <input asp-for="MovieTitle" class="form-control" />
+                <span asp-validation-for="MovieTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDescription" class="control-label"></label>
+                <input asp-for="MovieDescription" class="form-control" />
+                <span asp-validation-for="MovieDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieGenre" class="control-label"></label>
+                <input asp-for="MovieGenre" class="form-control" />
+                <span asp-validation-for="MovieGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDirector" class="control-label"></label>
+                <input asp-for="MovieDirector" class="form-control" />
+                <span asp-validation-for="MovieDirector" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieCast" class="control-label"></label>
+                <input asp-for="MovieCast" class="form-control" />
+                <span asp-validation-for="MovieCast" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDuration" class="control-label"></label>
+                <input asp-for="MovieDuration" class="form-control" />
+                <span asp-validation-for="MovieDuration" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
